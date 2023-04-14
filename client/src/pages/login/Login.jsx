@@ -50,6 +50,9 @@ export default function Login() {
 
     return (
         <div className="root">
+            <Link href="/" variant="body2">
+                Trang chủ
+            </Link>
             <div className="cover">
                 <ThemeProvider theme={theme}>
                     <Container component="main" maxWidth="xs" className="ctn">

@@ -2,15 +2,19 @@
   width: 100%;
   max-width: 1024px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
 
 .fpItem{
+  
   flex: 1;
   gap: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  width: 1140px;
 }
 
 .fpImg{

@@ -48,6 +48,9 @@ export default function SignUp() {
 
     return (
         <div className="root">
+            <Link href="/" variant="body2">
+                Trang chủ
+            </Link>
             <div className="cover">
                 <ThemeProvider theme={theme}>
                     <Container component="main" maxWidth="xs" className="ctn">
@@ -94,7 +97,27 @@ export default function SignUp() {
                                             required
                                             fullWidth
                                             id="email"
-                                            label="Địa chỉ email"
+                                            label="Username"
+                                            name="email"
+                                            autoComplete="email"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            id="email"
+                                            label="Email"
+                                            name="email"
+                                            autoComplete="email"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12}>
+                                        <TextField
+                                            required
+                                            fullWidth
+                                            id="email"
+                                            label="Ngày sinh"
                                             name="email"
                                             autoComplete="email"
                                         />
