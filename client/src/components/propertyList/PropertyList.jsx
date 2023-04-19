@@ -11,26 +11,23 @@ const PropertyList = () => {
   ];
   const theme = ['3 Star', '4 Star', '5 Star']
   return (
-    <div className="pList">
+    <div className="property">
       {loading ? (
         "loading"
       ) : (
         <>
           {data &&
             images.map((img,i) => (
-              <div className="pListItem" key={i}>
-                <img
-                  src={img}
-                  alt=""
-                  className="pListImg"
-                  style={{width: '330px', height: '250px'}}
-                />
-                <div className="pListTitles">
-                  <h1>{theme[i]}</h1>
-                  <h1>{data[i]?.type}</h1>
-                  <h2>{data[i]?.count} {data[i]?.type}</h2>
-                </div>
+              <div className="propertyItem">
+              <img
+                src={img}
+                alt=""
+                className="propertyImg"
+              />
+              <div className="propertyTitles">
+                <h1>{theme[i]}</h1>
               </div>
+            </div>
             ))}
         </>
       )}

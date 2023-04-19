@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  .root {
+    margin-top: 170px;
+  }
   
   .lContainer {
     display: flex;

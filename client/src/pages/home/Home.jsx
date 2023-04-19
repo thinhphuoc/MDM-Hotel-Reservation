@@ -8,10 +8,11 @@ import PropertyList from "../../components/propertyList/PropertyList";
 import "./home.css";
 
 const Home = () => {
+
   return (
     <div>
       <Navbar />
-      <Header/>
+      <Header />
       <div className="homeContainer">
         <Featured/>
         <h1 className="homeTitle">Browse by property type</h1>

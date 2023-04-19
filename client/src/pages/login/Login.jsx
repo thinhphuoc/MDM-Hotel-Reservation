@@ -13,6 +13,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './index.css';
+import IconBack from '../../assets/images/back.png';
+import { useStateContext } from '../../context/Context';
+
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -29,29 +33,41 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+const account = {
+    user: "user",
+    password: "123456"
+}
+
 export default function Login() {
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     const data = new FormData(event.currentTarget);
-    //     console.log({
-    //         email: data.get('email'),
-    //         password: data.get('password'),
-    //     });
-    //     const res = await loginApi({
-    //         username: data.get('email'),
-    //         password: data.get('password'),
-    //     });
-    //     console.log('res', res);
-    //     if (res?.success) {
-    //         localStorage.setItem('auth', JSON.stringify(res?.payload));
-    //     }
-    //     console.log(localStorage.getItem('auth'));
-    // };
+
+    const {setLogIn} = useStateContext();
+    const [email, setEmail] = React.useState('');
+    const [password, setPassWord] = React.useState('');
+
+    const navigate = useNavigate();
+
+    function handleEmailChange(event) {
+        setEmail(event.target.value);
+      }
+
+    function handlePasswordChange(event) {
+        setPassWord(event.target.value);
+    }
+
+    function handleSubmit () {
+        if(email === account.user && password === account.password) {
+            navigate("/")
+        }
+        else {
+            alert("djt me may nhap sai roi")
+        }
+        setLogIn(true);
+    }
 
     return (
         <div className="root">
-            <Link href="/" variant="body2">
-                Trang chủ
+            <Link href="/" variant="body2" style={{position: 'fixed', top: '0px'}}>
+                <img src={IconBack} alt='' style={{width: '50px', height: '50px'}}></img>
             </Link>
             <div className="cover">
                 <ThemeProvider theme={theme}>
@@ -73,27 +89,6 @@ export default function Login() {
                             </Typography>
                             <Box component="form" noValidate sx={{ mt: 3 }}>
                                 <Grid container spacing={2}>
-                                    {/* <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid> */}
                                     <Grid item xs={12}>
                                         <TextField
                                             required
@@ -102,6 +97,7 @@ export default function Login() {
                                             label="Địa chỉ email"
                                             name="email"
                                             autoComplete="email"
+                                            onChange={handleEmailChange}
                                         />
                                     </Grid>
                                     <Grid item xs={12}>
@@ -113,6 +109,7 @@ export default function Login() {
                                             type="password"
                                             id="password"
                                             autoComplete="new-password"
+                                            onChange={handlePasswordChange}
                                         />
                                     </Grid>
                                     <Grid item xs={12}>
@@ -122,8 +119,8 @@ export default function Login() {
                                         />
                                     </Grid>
                                 </Grid>
-                                <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-                                    Đăng nhập
+                                <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} onClick={handleSubmit}>
+                                        Đăng nhập                                  
                                 </Button>
                                 <Grid container justifyContent="flex-end">
                                     <Grid item>
