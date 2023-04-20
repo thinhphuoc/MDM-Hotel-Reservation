@@ -13,7 +13,7 @@ const Login = () => {
         password: undefined,
     });    
 
-    const {user, loading, error, dispatch} = useContext(AuthContext);
+    const { user,loading, error, dispatch} = useContext(AuthContext);
 
     const navigate = useNavigate();
 
