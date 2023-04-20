@@ -59,7 +59,7 @@ export default function Login() {
             navigate("/")
         }
         else {
-            alert("djt me may nhap sai roi")
+            alert("nhap sai roi")
         }
         setLogIn(true);
     }
