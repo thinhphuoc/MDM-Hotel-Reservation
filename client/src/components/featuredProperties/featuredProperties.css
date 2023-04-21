@@ -2,40 +2,26 @@
   width: 100%;
   max-width: 1024px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
 
 .fpItem{
-  height: 420px;
   flex: 1;
-  gap: 5px;
+  gap: 10px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  width: 1140px;
-  align-items: center;
-  border: 1px solid rgb(222, 216, 216);
-  
-}
-
-.fpItem hr {
-  width: 276px;
 }
 
 .fpImg{
   width: 100%;
-  height: 150px;
+  height: 250px;
   object-fit: cover;
 }
 
 .fpName{
-  font-size: 30px;
-  font-family: "Playfair Display", Arial, serif;
   color: #333;
-  font-weight: 600;
-  margin-top: 20px;
+  font-weight: bold;
 }
 
 .fpCity{
@@ -43,11 +29,7 @@
 }
 
 .fpPrice{
-  font-size: 20px;
   font-weight: 500;
-  margin-right: 5px;
-  margin-bottom: 20px;
-  border-bottom: 3px solid orange;
 }
 
 .fpRating>button{
@@ -61,9 +43,4 @@
 
 .fpRating>span{
   font-size: 14px;
-}
-
-.detail {
-  font-size: 20px;
-  margin-top: 10px;
 }
