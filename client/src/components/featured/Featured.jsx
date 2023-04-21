@@ -3,7 +3,7 @@ import "./featured.css";
 
 const Featured = () => {
 
-  console.log("dfsdsd")
+  console.log("Feature access")
   const {data,loading, error} = useFetch("hotels/countByCity?cities=neemuch,mumbai,london");
 
   return (
@@ -18,7 +18,7 @@ const Featured = () => {
             className="featuredImg"
           />
           <div className="featuredTitles">
-            <h1>lin</h1>
+            <h1>Ha Noi</h1>
             <h2>{data[0]}</h2>
           </div>
         </div>
@@ -30,7 +30,7 @@ const Featured = () => {
             className="featuredImg"
             />
           <div className="featuredTitles">
-            <h1>Reno</h1>
+            <h1>Ho Chi Minh</h1>
             <h2>533 properties</h2>
           </div>
         </div>
@@ -41,7 +41,7 @@ const Featured = () => {
             className="featuredImg"
             />
           <div className="featuredTitles">
-            <h1>Austin</h1>
+            <h1>Da Nang</h1>
             <h2>532 properties</h2>
           </div>
         </div>

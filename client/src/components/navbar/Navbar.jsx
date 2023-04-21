@@ -18,7 +18,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navContainer">
         <Link to="/" style={{color:"inherit", textDecoration:"none"}}>
-        <span className="logo">lamabooking</span>
+        <span className="logo">Hotel Booking </span>
         </Link>   {/* if there is user show his username otherwise show this div.  */}
         {user ? user.username : (
           <div className="navItems">
