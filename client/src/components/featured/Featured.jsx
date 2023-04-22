@@ -4,7 +4,7 @@ import "./featured.css";
 const Featured = () => {
 
   console.log("Feature access")
-  const {data,loading, error} = useFetch("hotels/countByCity?cities=Ho Chi Minh");
+  const {data,loading, error} = useFetch("hotels/countByCity?cities=Ho Chi Minh,Da Nang,Ha Noi");
   return (
     <div className="featured">
       {
@@ -30,7 +30,7 @@ const Featured = () => {
             />
           <div className="featuredTitles">
             <h1>Đà Nẵng</h1>
-            <h2> properties</h2>
+            <h2>{data[1]} properties</h2>
           </div>
         </div>
         <div className="featuredItem">
@@ -41,7 +41,7 @@ const Featured = () => {
             />
           <div className="featuredTitles">
             <h1>Hà Nội</h1>
-            <h2> properties</h2>
+            <h2>{data[2]} properties</h2>
           </div>
         </div>
       </>
