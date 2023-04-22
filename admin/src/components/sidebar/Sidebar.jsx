@@ -56,7 +56,7 @@ const Sidebar = () => {
             <span>Dashboard</span>          
           </li>
           </Link>
-          
+
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
@@ -76,10 +76,10 @@ const Sidebar = () => {
               <span>Rooms</span>
             </li>
           </Link>
-          {/* <li>
+          <li>
             <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
-          </li> */}
+            <span>Reservation</span>
+          </li>
           {/* <p className="title">USEFUL</p>
           <li>
             <InsertChartIcon className="icon" />
