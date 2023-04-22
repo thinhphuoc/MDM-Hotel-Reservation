@@ -17,6 +17,10 @@ const Navbar = () => {
     navigate('/login')
   }
 
+  const handleMoveToRegister = () =>  {
+    navigate('/register')
+  }
+
   console.log(user)
   const handleLogout = () =>  {
     dispatch({type:"LOGOUT"});
@@ -36,7 +40,7 @@ const Navbar = () => {
           <button className="navButton" onClick={() => handleLogout()} >Logout</button>
         </div> : (
           <div className="navItems">
-            <button className="navButton">Register</button>
+            <button className="navButton" onClick={() => handleMoveToRegister()}>Register</button>
             <button className="navButton" onClick={() => handleMoveToLogin()} >Login</button>
           </div>
         )}

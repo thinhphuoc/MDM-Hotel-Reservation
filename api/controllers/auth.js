@@ -4,26 +4,30 @@ import { createError } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 
 export const register = async (req, res, next) => {
-    try{
+    try {
+        // Check if the username already exists
+        const existingUser = await User.findOne({ username: req.body.username });
+        if (existingUser) {
+            return res.status(400).send('Username already taken');
+        }
+
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
 
         const newUser = new User({
-            // username:req.body.username,
-            // email:req.body.email,
-
-            ...req.body,          // takes all properties username, email, country, city etc...
-            password:hash,
-        })
+            ...req.body,
+            password: hash,
+        });
 
         await newUser.save();
-        console.log("user created");
-        res.status(200).send("User has been created.")
-    }catch(error){
-        console.log("user creation error ",error);
+        console.log('User created');
+        res.status(200).send('User has been created.');
+    } catch (error) {
+        console.log('User creation error ', error);
         next(error);
     }
-}
+};
+
 
 export const login = async (req, res, next) => {
     try{
