@@ -42,7 +42,9 @@ const Register = () => {
 
   return (
     <div className="register">
+      <div className='register-container'>
       <div className="rContainer">
+        <h1 style={{marginBottom: "20px"}}>REGISTER</h1>
         <input
           type="text"
           placeholder="username"
@@ -85,10 +87,11 @@ const Register = () => {
           onChange={handleChange}
           className="rInput"
         />
-        <button disabled={loading} onClick={handleRegister} className="rButton">
+        <button style={{width: '236px', height: '50px', fontSize: '24px'}} disabled={loading} onClick={handleRegister} className="rButton">
           Register
         </button>
         {error && <span>{error.message}</span>}
+      </div>
       </div>
     </div>
   );

@@ -40,13 +40,17 @@ const Login = () => {
 
     return (
         <div className="login">
+          <div className='login-container'>
+            
           <div className="lContainer">
+          <h1 style={{marginBottom: '15px'}}>LOGIN</h1>
             <input
               type="text"
               placeholder="username"
               id="username"
               onChange={handleChange}
               className="lInput"
+              style={{marginBottom: '20px'}}
             />
             <input
               type="password"
@@ -54,11 +58,13 @@ const Login = () => {
               id="password"
               onChange={handleChange}
               className="lInput"
+              style={{marginBottom: '20px'}}
             />
-            <button disabled={loading} onClick={handleClick} className="lButton">
+            <button style={{width: '190px', height: '50px', fontSize: '24px'}} disabled={loading} onClick={handleClick} className="lButton">
               Login 
             </button>
             {error && <span>{error.message}</span>}
+          </div>
           </div>
         </div>
       );
