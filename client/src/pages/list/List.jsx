@@ -16,12 +16,26 @@ const List = () => {
   const [options, setOptions] = useState(location.state.options);
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
+  const [searched, setSearched] = useState(false);
 
-  const { data, loading, error, reFetch } = useFetch(`/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`) ;
-
-  const handleClick = ()=>{
-    reFetch()
+  let url = "/hotels";
+  if (destination) {
+    url += `?city=${destination}`;
   }
+  if (min !== undefined && max !== undefined) {
+    url += `&min=${min}&max=${max}`;
+  }
+
+  if (searched && !destination) {
+    url = "/hotels";
+  }
+
+  const { data, loading, error, reFetch } = useFetch(url);
+
+  const handleClick = () => {
+    setSearched(true);
+    reFetch();
+  };
 
   return (
     <div>
