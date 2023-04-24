@@ -25,6 +25,8 @@ const NewRoom = () => {
     e.preventDefault();
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     
+    console.log(roomNumbers);
+
     try {
       await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
       handleMoveToRooms("/rooms");
