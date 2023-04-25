@@ -1,15 +1,36 @@
 .header {
-  background-color: #f21f14d8;
+  background-color: #2e2e2e2e;
+  background-image: url('../../assets/images/wallpaperflare-cropped\ \(1\).jpg');
+  background-size: cover;
   color: white;
   display: flex;
   justify-content: center;
   position: relative;
+  height: 400px;
 }
 
 .headerContainer {
   width: 100%;
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
+  justify-content: center;
+}
+
+.headerContainer .headerTitle {
+  width: 100%;
+  max-width: 1024px;
+  margin: 100px 0px 0px 0px;
+  text-align: center;
+  -webkit-text-stroke: 1px #2e2e2e;
+}
+
+.headerContainer .headerTitle2 {
+  width: 100%;
+  max-width: 1024px;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+  font-size: 30px;
+  -webkit-text-stroke: 1px #2e2e2e;
 }
 
 .headerContainer.listMode {

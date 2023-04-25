@@ -63,14 +63,15 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          
         </div>
+        
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
               Welcome To Our 19HTTT4 Website
             </h1>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            <h2 className="headerTitle2">-------Hotel-------</h2>
+            {/* {!user && <button className="headerBtn">Sign in / Register</button>} */}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

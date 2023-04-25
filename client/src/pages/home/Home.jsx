@@ -19,6 +19,8 @@ const Home = () => {
         <h1 className="homeTitle">Hotel Room Lists</h1>
         <FeaturedProperties/>
         <MailList/>
+      </div>
+      <div className="homeContainer2">
         <Footer/>
       </div>
     </div>

@@ -13,7 +13,12 @@
   border-radius: 10px;
   overflow: hidden;
   height: 250px;
-  flex:1
+  flex:1;
+}
+
+.featuredItem h1{
+  font-size: 40px;
+  -webkit-text-stroke: 1px #232323;
 }
 
 .featuredImg{
