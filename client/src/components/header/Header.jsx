@@ -64,10 +64,10 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem active">
+          {user && <div className="headerListItem active">
             <FontAwesomeIcon icon={faBook}/>
             <span>Booking List</span>
-          </div>
+          </div>}
         </div>
         
         {type !== "list" && (
