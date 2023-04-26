@@ -60,11 +60,11 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <div onClick={() => navigate("/")} className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          {user && <div className="headerListItem active">
+          {user && <div onClick={() => navigate("/booking")} className="headerListItem active">
             <FontAwesomeIcon icon={faBook}/>
             <span>Booking List</span>
           </div>}
