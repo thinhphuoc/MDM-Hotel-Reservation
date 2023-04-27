@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const NewRoom = () => {
   const [info, setInfo] = useState({});
   const [hotelId, setHotelId] = useState(undefined);
-  const [rooms, setRooms] = useState([]);
+  const [rooms, setRooms] = useState('');
 
   const { data, loading, error } = useFetch("/hotels");
 
@@ -23,7 +23,7 @@ const NewRoom = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
+    const roomNumbers = [{ number: rooms }];
     
     console.log(roomNumbers);
 
