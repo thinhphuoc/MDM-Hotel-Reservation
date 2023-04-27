@@ -3,23 +3,21 @@ import Hotel from "../models/Hotel.js";
 import { createError } from "../utils/error.js";
 
 export const createRoom = async (req, res, next) => {
-  const hotelId = req.params.hotelid;
   const newRoom = new Room(req.body);
 
   try {
     const savedRoom = await newRoom.save();
 
     // Update hotel's rooms array
-    const hotel = await Hotel.findById(hotelId);
-    hotel.rooms.push(savedRoom._id);
-    await hotel.save();
+    const hotel = await Hotel.findByIdAndUpdate(req.body.hotelId, {
+      $push: { rooms: savedRoom._id }
+    }, { new: true });
 
     res.status(200).json(savedRoom);
   } catch (err) {
     next(err);
   }
 };
-
 export const updateRoom = async (req, res, next) => {
     try {
       const updatedRoom = await Room.findByIdAndUpdate(
