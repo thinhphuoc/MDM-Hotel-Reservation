@@ -4,7 +4,7 @@ import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 //CREATE
-router.post("/:hotelid", verifyAdmin, createRoom);
+router.put("/:hotelid", verifyAdmin, createRoom);
 
 //UPDATE
 router.put("/availability/:id", updateRoomAvailability);           // here id = room number id

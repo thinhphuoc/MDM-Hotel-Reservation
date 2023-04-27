@@ -25,7 +25,7 @@ const NewRoom = () => {
     e.preventDefault();
     const roomNumbers = [{ number: rooms }];
     try {
-      await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
+      await axios.put(`/rooms/${hotelId}`, { ...info, roomNumbers });
       handleMoveToRooms("/rooms");
     } catch (err) {
       console.log(err);
