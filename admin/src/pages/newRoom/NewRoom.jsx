@@ -13,7 +13,7 @@ const NewRoom = () => {
   const [hotelId, setHotelId] = useState(undefined);
   const [rooms, setRooms] = useState('');
 
-  const { data, loading, error } = useFetch("/hotels");
+  const { data: hotels, loading, error } = useFetch("/hotels");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -24,9 +24,6 @@ const NewRoom = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     const roomNumbers = [{ number: rooms }];
-    
-    console.log(roomNumbers);
-
     try {
       await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
       handleMoveToRooms("/rooms");

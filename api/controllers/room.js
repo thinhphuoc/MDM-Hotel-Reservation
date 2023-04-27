@@ -8,14 +8,12 @@ export const createRoom = async (req, res, next) => {
 
   try {
     const savedRoom = await newRoom.save();
-    try {
-      await Hotel.findByIdAndUpdate(hotelId, {
-        $push: { rooms: savedRoom._id },
-        //push is method of mongodb which allow us to push(append) data in array 
-      });
-    } catch (err) {
-      next(err);
-    }
+
+    // Update hotel's rooms array
+    const hotel = await Hotel.findById(hotelId);
+    hotel.rooms.push(savedRoom._id);
+    await hotel.save();
+
     res.status(200).json(savedRoom);
   } catch (err) {
     next(err);
