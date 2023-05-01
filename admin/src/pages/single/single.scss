@@ -15,6 +15,12 @@
         box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
         padding: 20px;
         position: relative;
+        
+        .title{
+          display: flex;
+          color: black;
+          font-size: 20px;
+        }
 
         .editButton {
           position: absolute;
@@ -65,6 +71,13 @@
 
       .right {
         flex: 2;
+
+        .title{
+          padding-top: 20px;
+          display: flex;
+          color: black;
+          font-size: 20px;
+        }
       }
     }
 
@@ -77,7 +90,7 @@
 
     .title {
       font-size: 16px;
-      color: lightgray;
+      color: black;
       margin-bottom: 20px;
     }
   }
