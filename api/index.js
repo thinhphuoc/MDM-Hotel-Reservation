@@ -14,6 +14,7 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import hotelsRoute from "./routes/hotels.js";
 import roomsRoute from "./routes/rooms.js";
+import bookingsRoute from "./routes/bookings.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -31,15 +32,15 @@ const connect = async () => {
     
 
 mongoose.connection.on("disconnected", ()=>{
-    console.log("mongoDB disconnected!");
+    console.log("MongoDB disconnected!");
 })
 
 mongoose.connection.on("connected", ()=>{
-    console.log("mongoDB connected!");
+    console.log("MongoDB connected!");
 })
 
 app.get("/", (req, res)=>{
-    res.send("hello first request!")
+    res.send("Hello first request!")
 });
 
 
@@ -63,6 +64,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
+app.use("/api/bookings", bookingsRoute);
 
 
 

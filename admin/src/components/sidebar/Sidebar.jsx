@@ -76,10 +76,12 @@ const Sidebar = () => {
               <span>Rooms</span>
             </li>
           </Link>
+          <Link to="/bookings" style={{ textDecoration: "none" }}>
           <li>
             <LocalShippingIcon className="icon" />
             <span>Reservation</span>
           </li>
+          </Link>
           {/* <p className="title">USEFUL</p>
           <li>
             <InsertChartIcon className="icon" />

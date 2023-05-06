@@ -81,5 +81,36 @@ export const roomColumns = [
     headerName: "Max People",
     width: 100,
   },
+  
 ];
+
+export const bookingColumns = [
+  { field: "_id", headerName: "ID", width: 100 },
+  {
+    field: "hotelName",
+    headerName: "HotelName",
+    width: 200,
+  },
+  {
+    field: "roomNumber",
+    headerName: "RoomNumber",
+    width: 120,
+  },
+  {
+    field: "price",
+    headerName: "Price",
+    width: 100,
+  },
+  {
+    field: "startDate",
+    headerName: "Check In",
+    width: 250, 
+  },
+  {
+    field: "endDate",
+    headerName: "Check Out",
+    width: 250,
+  }
+];
+
   

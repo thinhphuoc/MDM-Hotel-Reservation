@@ -34,6 +34,12 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    booking: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Booking",
+      },
+    ]
   },
   { timestamps: true }   //created at and updated at time.
 );
