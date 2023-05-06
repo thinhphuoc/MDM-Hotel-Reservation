@@ -16,7 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
-
+import { format } from "date-fns";
 
 const Hotel = () => {
 
@@ -149,6 +149,13 @@ const Hotel = () => {
               </p>
             </div>
             <div className="hotelDetailsPrice">
+              <div className="lsItem">
+                <label>Check-in Date</label>
+                <span>{`${format(
+                  dates[0].startDate,
+                  "MM/dd/yyyy"
+                )} to ${format(dates[0].endDate, "MM/dd/yyyy")}`}</span>
+              </div>
               <h1>Perfect for a {days}-night stay!</h1>
               <span>
                 Located in the real heart of Krakow, this property has an
