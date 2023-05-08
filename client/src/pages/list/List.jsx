@@ -7,6 +7,9 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
+import { useNavigate } from "react-router-dom";
 
 const List = () => {
   const location = useLocation();
@@ -17,7 +20,7 @@ const List = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [searched, setSearched] = useState(false);
-
+  
   let url = "/hotels";
   if (destination) {
     url += `?city=${destination}`;
@@ -31,10 +34,17 @@ const List = () => {
   }
 
   const { data, loading, error, reFetch } = useFetch(url);
-
+  
   const handleClick = () => {
     setSearched(true);
     reFetch();
+  };
+
+  const navigate = useNavigate();
+  const {dispatch} = useContext(SearchContext);
+  const handleSearch = () => {
+    dispatch({type:"NEW_SEARCH", payload: {destination, dates, options} });
+    navigate("/hotels", { state: { destination, dates, options } });
   };
 
   return (
@@ -107,7 +117,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <button onClick={handleClick}>Search</button>
+            <button onClick={handleSearch}>Search</button>
           </div>
           <div className="listResult">
             {loading ? "loading": <>

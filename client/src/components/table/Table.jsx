@@ -7,16 +7,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import "./Table.css"
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
+function createData(name, roomnumber, price, checkin, checkout, status) {
+    return { name, roomnumber, price, checkin, checkout, status };
 }
 
 const rows = [
-  createData('La Vela Saigon Hotel', 159, "11/1/2023", "success"),
-  createData('La Vela Saigon Hotel', 159, "11/1/2023", "success"),
-  createData('La Vela Saigon Hotel', 159, "11/1/2023", "success"),
-  createData('La Vela Saigon Hotel', 159, "11/1/2023", "success"),
-  createData('La Vela Saigon Hotel', 159, "11/1/2023", "success"),
+  createData('La Vela Saigon Hotel', 159, 1000, "11/1/2023", "11/1/2023", "success"),
+  createData('La Vela Saigon Hotel', 159, 1000, "11/1/2023", "11/1/2023", "success"),
+  createData('La Vela Saigon Hotel', 159, 1000, "11/1/2023", "11/1/2023", "success"),
+  createData('La Vela Saigon Hotel', 159, 1000, "11/1/2023", "11/1/2023", "success"),
+  createData('La Vela Saigon Hotel', 159, 1000, "11/1/2023", "11/1/2023", "success"),
 ];
 
 export default function BasicTable() {
@@ -27,9 +27,11 @@ export default function BasicTable() {
                 <TableHead>
                 <TableRow>
                     <TableCell sx={{ fontWeight: 'bold' }}              >Hotel Name</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold' }} align="right">Room Number</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold' }} align="right">Date Reservation</TableCell>
-                    <TableCell sx={{ fontWeight: 'bold' }} align="right">Status</TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }} align="center">Room Number</TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }} align="middle">Price</TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }} align="middle">Check in</TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }} align="middle">Check out</TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }} align="center">Status</TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
@@ -41,9 +43,11 @@ export default function BasicTable() {
                         <TableCell component="th" scope="row">
                             {row.name}
                         </TableCell>
-                        <TableCell align="right">{row.calories}</TableCell>
-                        <TableCell align="right">{row.fat}</TableCell>
-                        <TableCell className='Status' sx={{ fontWeight: 'bold', bgcolor: 'success.main', color: 'primary.contrastText' }} align="right">{row.carbs}</TableCell>
+                        <TableCell align="center">{row.roomnumber}</TableCell>
+                        <TableCell align="middle">{row.price}</TableCell>
+                        <TableCell align="middle">{row.checkin}</TableCell>
+                        <TableCell align="center">{row.checkout}</TableCell>
+                        <TableCell className='Status' sx={{ fontWeight: 'bold', bgcolor: 'success.main', color: 'primary.contrastText' }} align="right">{row.status}</TableCell>
                     </TableRow>
                 ))}
                 </TableBody>
