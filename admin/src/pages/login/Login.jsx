@@ -47,7 +47,7 @@ const Login = () => {
         <div className="login">
           <div className='login-container'>
             <div className="lContainer">
-              <h1 style={{marginBottom: '15px', marginLeft:'45px'}}>LOGIN</h1>
+              <h1 style={{marginBottom: '15px', marginLeft:'15px'}}>LOGIN</h1>
               <input
                 type="text"
                 placeholder="username"
