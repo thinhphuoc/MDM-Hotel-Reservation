@@ -72,8 +72,8 @@ const Reserve = ({setOpen, hotelId, hotelName, price}) => {
             hotelName,
             roomNumber: selectedRoomNumbers[0],
             price,
-            startDate: alldates[0],
-            endDate: alldates[alldates.length - 1],
+            startDate: alldates[1],
+            endDate: alldates[alldates.length-0],
           });
           //console.log(userId);
           console.log("ASDSDJADLKADJKALDJAKDLJADKLAJDKLADJALKDJA")
