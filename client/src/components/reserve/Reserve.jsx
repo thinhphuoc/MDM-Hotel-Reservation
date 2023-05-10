@@ -24,19 +24,22 @@ const Reserve = ({setOpen, hotelId, hotelName, price}) => {
     );
   };
 
-  const getDatesInRange = (startDate, endDate) => {               // it give timestamp which is easier to compare
+  const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
     const end = new Date(endDate);
-
-    const date = new Date(start.getTime());
-
+  
     const dates = [];
-
-    while (date <= end) {
-      dates.push(new Date(date).getTime());
-      date.setDate(date.getDate() + 1);
+  
+    let currentDate = new Date(start.getTime());
+    currentDate.setDate(currentDate.getDate() + 1);
+    // Add one day to the end date
+    end.setDate(end.getDate() + 1);
+  
+    while (currentDate <= end) {
+      dates.push(currentDate.getTime());
+      currentDate.setDate(currentDate.getDate() + 1);
     }
-
+  
     return dates;
   };
 
@@ -80,6 +83,7 @@ const Reserve = ({setOpen, hotelId, hotelName, price}) => {
           console.log(hotelName);
           console.log(selectedRoomNumbers[0]);
           console.log(price);
+          console.log(alldates);
           return res.data;
         })
       );
