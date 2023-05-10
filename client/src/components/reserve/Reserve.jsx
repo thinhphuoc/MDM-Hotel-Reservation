@@ -56,20 +56,30 @@ const Reserve = ({setOpen, hotelId, hotelName, price}) => {
   const handleClick = async () => {
     try {
       const userId = user ? user._id : null; 
-      console.log("ASDSDJADLKADJKALDJAKDLJADKLAJDKLADJALKDJA")
-      console.log(hotelName);
-      console.log(selectedRooms);
-      console.log(price);
+
+      // Retrieve the room numbers from the selected rooms
+      const selectedRoomNumbers = selectedRooms.map((roomId) => {
+        const room = data.find((item) => item.roomNumbers.some((number) => number._id === roomId));
+        return room ? room.roomNumbers.find((number) => number._id === roomId).number : null;
+      });
+
+      // Log the room numbers to the console
+      console.log(selectedRoomNumbers);
+
       await Promise.all(
         selectedRooms.map((roomId) => {
           const res = axios.post(`/bookings/${userId}`, {
-            hotelName: hotelName,
-            roomNumber: selectedRooms,
-            price: price,
-            startDate: "2023-1-1",
-            endDate: "2023-1-1"
+            hotelName,
+            roomNumber: selectedRoomNumbers[0],
+            price,
+            startDate: alldates[0],
+            endDate: alldates[alldates.length - 1],
           });
           //console.log(userId);
+          console.log("ASDSDJADLKADJKALDJAKDLJADKLAJDKLADJALKDJA")
+          console.log(hotelName);
+          console.log(selectedRoomNumbers[0]);
+          console.log(price);
           return res.data;
         })
       );
