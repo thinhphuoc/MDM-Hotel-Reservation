@@ -81,8 +81,15 @@ const Hotel = () => {
   };
 
   const handleClick = () => {
+
+    
+    
     if(user){
       setOpenModal(true);
+      // console.log("asdasdasdasdasd")
+      // console.log(id);
+      // console.log(data.name);
+      // console.log(days * data.cheapestPrice * options.room);
     }else{
       navigate("/login");   // if user is not login
     }
@@ -175,7 +182,7 @@ const Hotel = () => {
       {openModal && <Reserve 
         setOpen={setOpenModal} 
         hotelId={id} 
-        hotelName={data.hotelName} 
+        hotelName={data.name} 
         price={days * data.cheapestPrice * options.room}
       />}
       </div>

@@ -56,15 +56,18 @@ const Reserve = ({setOpen, hotelId, hotelName, price}) => {
   const handleClick = async () => {
     try {
       const userId = user ? user._id : null; 
-
+      console.log("ASDSDJADLKADJKALDJAKDLJADKLAJDKLADJALKDJA")
+      console.log(hotelName);
+      console.log(selectedRooms);
+      console.log(price);
       await Promise.all(
         selectedRooms.map((roomId) => {
           const res = axios.post(`/bookings/${userId}`, {
-            hotelName,
+            hotelName: hotelName,
             roomNumber: selectedRooms,
-            price,
-            startDate: alldates[0],
-            endDate: alldates[alldates.length - 1],
+            price: price,
+            startDate: "2023-1-1",
+            endDate: "2023-1-1"
           });
           //console.log(userId);
           return res.data;
